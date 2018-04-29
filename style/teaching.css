@@ -1,0 +1,364 @@
+/* @override 
+	http://www.lri.fr/~bonnet/fondihm/style.css
+	https://www.lri.fr/~bonnet/fhci/style.css
+	https://www.lri.fr/~bonnet/teaching/style.css
+	https://www.lri.fr/~bonnet/style/teaching.css
+*/
+
+/* @group Fonts */
+
+@font-face {
+	font-family: "Gotham-Book";
+	src: url(fonts/Gotham-MediumItalic.otf);
+	src: local("Gotham-Medium"), url(fonts/Gotham-MediumItalic.otf) format("opentype");
+	font-weight: bold;
+	font-style: italic, oblique;
+}
+
+@font-face {
+	font-family: "Gotham-Book";
+	src: url(fonts/Gotham-Medium.otf);
+	src: local("Gotham-Book"), url(fonts/Gotham-Medium.otf) format("opentype");
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: "Gotham-Book";
+	src: url(fonts/Gotham-BookItalic.otf);
+	src: local("Gotham-BookItalic"), url(fonts/Gotham-BookItalic.otf) format("opentype");
+	font-style: italic, oblique;
+}
+
+@font-face {
+	font-family: "Gotham-Book";  
+	src: url(fonts/Gotham-Book.otf);
+	src: local("Gotham-Book"), url(fonts/Gotham-Book.otf) format("opentype");
+}
+
+@font-face {
+	font-family: "Gotham-Light";
+	src: url(fonts/Gotham-LightItalic.otf);
+	src: local("Gotham-Light"), url(fonts/Gotham-LightItalic.otf) format("opentype");
+	font-style: italic, oblique;
+}
+
+@font-face {
+	font-family: "Gotham-Light";  
+	src: url(fonts/Gotham-Light.otf);
+	src: local("Gotham-Light"), url(fonts/Gotham-Light.otf) format("opentype");
+}
+
+@font-face {
+	font-family: "Inconsolata";
+	src: url(fonts/Inconsolata.otf);
+	src: local("Inconsolata"), url(fonts/Inconsolata.otf) format("opentype");
+}
+
+
+/* @end */
+
+body {
+	font: 0.9em "Gotham-Book", "Helvetica", Arial, Geneva, sans-serif;
+}
+
+div.body {
+	max-width: 720px;
+	min-width: 440px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+div.wrap {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 60px;
+}
+
+::selection {
+	background-color: rgba(246,246,0,0.5);
+}
+
+p, ul, ol, h1, h2, h3, h4, h5 {
+	margin-top: 1em;
+	padding: 0.4em 20px;
+	margin-bottom: 0;
+}
+
+hr {
+	border-bottom-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	border-top: 1px solid #e5e5e5;
+	margin-top: 2em;
+	margin-bottom: 0;
+	clear: both;
+}
+
+/* @group Links */
+
+a {
+		color: black;
+		text-decoration: none;
+		border-bottom: 1px solid #919191;
+		background-repeat: no-repeat;
+		background-position: 0 top;
+		background-size: 16px 16px;
+	}
+
+a:visited {
+		border-bottom-style: dotted;
+	}
+
+a:hover {
+		border-radius: 3px;
+		background-color: rgba(246,246,0,0.5);
+		position: relative;
+		border-style: none;
+		padding-top: 2px;
+		padding-bottom: 2px;
+	}
+
+a:active {
+		background-color: #ffffda;
+	}
+
+@media (-webkit-max-device-pixel-ratio: 2), 
+(max-resolution: 192dpi) {
+
+	a[href^="mailto:"] {
+		background-image: url(icons/mail.png);
+		padding-top: 2px;
+		padding-left: 20px;
+	}
+	
+	a[href$=".pdf"] {
+		background-image: url(icons/book.png);
+		padding-top: 2px;
+		padding-left: 20px;
+	}
+	
+	a[href$=".mov"], a[href$=".mp4"], a[href$=".wmv"], a[href$=".mpg"], a[href$=".m4v"], a[href$=".flv"], a[href$=".avi"], a[href^="http://www.youtube.com"], a[href^="http://vimeo.com"]
+	 {
+		background-image: url(icons/video.png);
+		padding-top: 2px;
+		padding-left: 20px;
+	}
+	
+	a[href$=".m4a"] {
+		background-image: url(icons/recording.png);
+		padding-top: 2px;
+		padding-left: 20px;
+	}
+	
+	a[title~="Slides"] {
+		background-image: url(icons/slides.png);
+		padding-top: 2px;
+		padding-left: 20px;
+	}
+	
+	a[title~="Demo"], a[title~="Solution"] {
+		background-image: url(icons/demo.png);
+		padding-top: 2px;
+		padding-left: 20px;
+	}
+
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi) {
+
+	a[href^="mailto:"] {
+		background-image: url(icons/mail-2x.png);
+		padding-top: 2px;
+		padding-left: 20px;
+	}
+	
+	a[href$=".pdf"] {
+		background-image: url(icons/book-2x.png);
+		padding-top: 2px;
+		padding-left: 20px;
+	}
+	
+	a[href$=".mov"], a[href$=".mp4"], a[href$=".wmv"], a[href$=".mpg"], a[href$=".m4v"], a[href$=".flv"], a[href$=".avi"], a[href^="http://www.youtube.com"], a[href^="http://vimeo.com"]
+	 {
+		background-image: url(icons/video-2x.png);
+		padding-top: 2px;
+		padding-left: 20px;
+	}
+	
+	a[href$=".m4a"] {
+		background-image: url(icons/recording-2x.png);
+		padding-top: 2px;
+		padding-left: 20px;
+	}
+	
+	a[title~="Slides"] {
+		background-image: url(icons/slides-2x.png);
+		padding-top: 2px;
+		padding-left: 20px;
+	}
+	
+	a[title~="Demo"], a[title~="Solution"] {
+		background-image: url(icons/demo-2x.png);
+		padding-top: 2px;
+		padding-left: 20px;
+	}
+
+}
+
+
+
+/* @end */
+
+p {
+	margin-top: 0.4em;
+	margin-bottom: 0;
+}
+
+ul {
+	list-style-type: square;
+	margin: 0;
+	list-style-position: outside;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+ol {
+	list-style-type: decimal;
+	list-style-position: outside;
+	margin: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+li {
+	margin: 0.55em 0 0 20px;
+}
+
+p, li {
+	line-height: 1.7em;
+	text-align: justify;
+	-webkit-hyphens: auto;
+	-webkit-hyphenate-limit-after:3;
+	-webkit-hyphenate-limit-before:5;
+	hyphens: auto;
+	font-size: 0.85em;
+}
+
+ul li, ol li {
+	margin-bottom: 0;
+	margin-right: 0;
+	margin-top: 0.5em;
+}
+
+ul li ul, ol li ol {
+	margin-right: 0;
+	padding-right: 0;
+}
+
+li ul li, li ol li, li p {
+	font-size: 1em;
+}
+
+pre, pre.prettyprint {
+	padding: 0 0.75em;
+	border-bottom-style: none;
+	border-right-style: none;
+	border-top-style: none;
+	overflow: auto;
+	margin: 1em 1em 1em 3em;
+	font-family: Inconsolata, Monaco, Courier, "Courier New", mono;
+	border-left-style: none;
+}
+
+span.pre, code {
+	color: #3774b7;
+	font-family: Inconsolata, Monaco, Courier, "Courier New", mono;
+	white-space: pre;
+	-webkit-hyphens: none;
+	hyphens: none;
+}
+
+div.image {
+	text-align: center;
+	clear: both;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+h1 {
+		text-align: left;
+		font: normal normal 2em Gotham-Light;
+		margin-top: 1.3em;
+	margin-bottom: 0;
+}
+
+h1 span.level {
+	font-size: 0.65em;
+}
+
+h1 img {
+	float: right;
+	width: 100px;
+	margin-left: 1em;
+	margin-bottom: 1em;
+	margin-top: 0.25em;
+	border-style: none;
+}
+
+p img, li img {
+	border-radius: 3px;
+	border: 1px solid #e5e5e5;
+	padding: 3px;
+}
+
+h2 {
+	border-radius: 3px;
+	background-color: #EEE;
+	text-align: center;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1.5em;
+	padding: 0.65em;
+	margin-top: 3em;
+	margin-bottom: 1em;
+}
+
+h3 {
+	font: bold 1.2em Gotham-Book;
+	text-align: left;
+	margin-top: 1.75em;
+	margin-bottom: 0.75em;
+}
+
+h4 {
+	margin-top: 1.75em;
+	margin-bottom: 0.75em;
+}
+
+span.todo {
+	color: #e92c13;
+	font-style: italic;
+	font-weight: bold;
+	font-family: Helvetica, Arial, Geneva, sans-serif;
+}
+
+span.todo:before {
+	content: "\002190";
+	color: black;
+}
+
+span.new {
+	color: white;
+	border-radius: 3px;
+	background-color: #f3871b;
+	font-size: 0.7em;
+	padding: 2px 5px;
+	position: relative;
+	top: -2px;
+	margin-right: 0.4em;
+}
+
+p.note {
+	font-style: italic;
+}
