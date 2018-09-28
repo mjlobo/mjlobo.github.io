@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8" />
+ <link rel="stylesheet" type="text/css" href="../../Semantic-UI-CSS-master/semantic.min.css">
+ <script
+ src="https://code.jquery.com/jquery-3.1.1.min.js"
+ integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+ crossorigin="anonymous"></script>
+ <script src="Semantic-UI-CSS-master.js"></script>
+
+ <style type="text/css">
+
+
+ img.header_image {
+  margin-top: 30px;
+}
+
+p.intro{
+ margin-top:50px;
+ margin-bottom: 40px;
+}
+
+div.main_component{
+ padding-bottom: 50px;
+}
+
+<div class="ui padded text container main_component">
+<div class="ui padded text container main_component">
+h4.contact{
+ padding-bottom: 0px;
+ margin-bottom: 0px;
+ padding-top: 0px;
+ margin-top: -10px;
+}
+
+item.description {
+ font-size: 0.9em;
+}
+
+.topseparated {
+  margin-top: 20px;
+}
+
+h1.title {
+  margin-top: 30px;
+}
+
+.ui.header:first-child {
+    margin-top: 0.9em;
+}
+
+
+</style>
+<body>
+
+  <div class="ui padded text container main_component">
+    <h1 class="ui centered header title">Infovis</h1>
+    <h2 class="ui header"> TP: Premières explorations des données </h2>
+
+    <p class="intro"> L'objectif final de ce TP est de créer une vidéo pour faire du Story Telling avec des données du traffic aérien. Pour cela, on commencera par nettoyer les données et les importer dans Google Data Studio.  </p>
+
+    <h3 class="ui dividing centered header">Quelques exemples</h3>
+    <p> <a href=https://vimeo.com/pviscontest> Concours Pacific Vis </a> </p>
+    <p> <a href=https://www.npr.org/sections/money/2015/05/07/404991483/how-machines-destroy-and-create-jobs-in-4-graphs?live=1?live=1&t=1538151261462> How machines create and destroy jobs </a> </p>
+
+
+    <h3 class="ui dividing centered header">Données</h3>
+    <h3 class="ui"><a>Trajets.csv</a></h3>
+    <div class="ui unstackable items">
+      <div class="item"><b>ANMOIS</b> : année et mois (ex : 201601 pour janvier 2016)</div>
+      <div class="item"> <b> DEP </b> : ville de départ (code OACI)</div>
+      <div class="item"> <b> ARR </b>: ville d’arrivée (code OACI)</div>
+      <div class="item"> <b> FSC </b>: faisceau (LC, MC, CC pour Long/Moyen/Court-Courrier)</div>
+      <div class="item"> <b> ZON </b>: zone d’origine ou destination (D : domestique, O : outre-mer, I : international)</div>
+      <div class="item"> <b> NVOLS </b>: nombre de vols commerciaux</div>
+      <div class="item"> <b> PAX_FS </b>: nombre de passagers à bord</div>
+
+    Nota : trafics en dessous du seuil rassemblés dans des enregistrements codés Zxx_ («Autres Aéroports...»)</div>
+    <h3 class="ui"><a>Retards.csv</a></h3>
+    <div class="ui unstackable items">
+
+      <div class="item"> <b>DEP </b>: ville de départ (code OACI) </div>
+      <div class="item"> <b> PC15_D </b>: pourcentage de vols ayant un retard >15’ au départ </div>
+      <div class="item"> <b> ARR </b>: ville d’arrivée (code OACI) </div>
+      <div class="item">  <b> ANMOIS </b>: année et mois (ex : 201601 pour janvier 2016) </div>
+      <div class="item">  <b> PC15_A </b>: pourcentage de vols ayant un retard >15’ à l’arrivée </div>
+      <div class="item"> <b> RETARD_D </b>: retard moyen par vol au départ </div>
+      <div class="item"> <b> RETARD_A </b> : retard moyen par vol à l’arrivée </div>
+
+      Nota :
+      - retard moyen compté dès la première minute pour tous les vols passagers réguliers
+      - données non disponibles sur les aéroports à l’étranger et sur certains aéroports français 
+
+    </div>
+
+    <h3 class="ui"><a>Emissions.csv</a></h3>
+    <div class="ui unstackable items">
+      <div class="item"> <b> ANMOIS </b>: année et mois (ex : 201601 pour janvier 2016) </div>
+      <div class="item"> <b> APT </b>: aéroport (code OACI) </div>
+      <div class="item"> <b> FSC </b>: faisceau (LC, MC, CC pour Long/Moyen/Court-Courrier) </div>
+      <div class="item"> <b>ZON </b>: zone d’origine ou destination (D : domestique, O : outre-mer, I : international) </div>
+      <div class="item"> <b> CAT </b>: catégorie avion (A : moins de 100 sièges, B : 100 à 220 sièges, C :  plus de 220 sièges) </div>
+      <div class="item"> <b> MVT </b>: nombre de mouvements commerciaux (arrivées + départs) </div>
+      <div class="item"> <b> PE</b>Q </b>: nombre de passagers equivalents à bord (1 PEQ = 1 PAX ou 100 kg fret/poste) </b></div>
+      <div class="item"> <b> CO2 </b>: émissions CO2 (en kilotonnes) </div>
+      <div class="item"> <b> NOX </b>: émissions NOX (en tonnes) </div>
+      <div class="item"> <b> COVNM </b>: émissions COV nom méthanique (en tonnes) </div>
+      <div class="item"> <b> TSP </b>: émissions particules (en tonnes) </div>
+    </div>
+    <h3 class="ui"><a>Aeroports.csv</a></h3>
+    <div class="ui unstackable items">
+      <div class="item"> <b> APT </b> : code OACI de l’aéroport </div>
+      <div class="item"> <b> APT_NOM </b>: nom de l’aéroport </div>
+      <div class="item"> <b> PAYS_ISO2 </b>: code ISO2 du pays de l’aéroport </div>
+      <div class="item"> <b> PAYS_NOM </b>: nom du pays </div>
+      <div class="item"> <b> PAYS_FSC </b>: faisceau du pays (LC, MC, CC pour Long/Moyen/Court-Courrier) </div>
+      <div class="item"> <b> PAYS_ZON </b>: zone du pays (D : domestique, O : outre-mer, I : international) </div>
+      <div class="item">  <b> APT_LAT, APT_LONG </b>: latitude et longitude de l’aéroport (en degré décimal) </div>
+    </div>
+    <br>
+    <h3 class="ui dividing centered header topseparated"><a class="topseparated" href="https://datastudio.google.com/navigation/explorer"> Google Data Studio </a></h3>
+
+    <h3 class="ui">Créer un projet</h3>
+    <iframe src="https://drive.google.com/file/d/1jjJYp0ThfPOFEp-ank-hv1KAQ_0aB0aR/preview" width="640" height="480"></iframe>
+
+     <h3 class="ui">Connecter les données</h3>
+    <iframe src="https://drive.google.com/file/d/1KXr1LL1o5z7PNnfh_pmTmlvsM8XWeL7F/preview" width="640" height="480"></iframe>
+
+    <h3 class="ui">Créer une série temporelle</h3>
+    <iframe src="https://drive.google.com/file/d/1blfFD9bvyxObZKcpoET_yyO9OperD_Bv/preview" width="640" height="480"></iframe>
+
+     <h3 class="ui">Créer un champ</h3>
+    <iframe src="https://drive.google.com/file/d/1T_qiBjsGWaWaMVVPgRSKxbKUiYW3x1Ya/preview" width="640" height="480"></iframe>
+
+     <h3 class="ui">Ajouter une autre source de données</h3>
+    <iframe src="https://drive.google.com/file/d/1iWThnXpwSjbNpoJUkpQdgqIA9_vvoCDg/preview" width="640" height="480"></iframe>
+
+     <h3 class="ui">Combiner des sources de données</h3>
+    <iframe src="https://drive.google.com/file/d/1UId7qu9yYeJo0pYE9tyHO2dzYmCg5AfK/preview" width="640" height="480"></iframe>
+
+      <h3 class="ui">Ajouter une visualization cartographique</h3>
+    <iframe src="https://drive.google.com/file/d/1xAmgXpGYUKR-hiMLQzfOdo_51IUNnhhq/preview" width="640" height="480"></iframe>
+
+  </div>
+</body>
+</head>
+</html>
