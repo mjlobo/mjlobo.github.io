@@ -47,6 +47,10 @@ names.set("medium_two", "Two counties, medium");
 names.set("hard_one", "One county, hard");
 names.set("hard_two", "Two counties, hard");
 let fileNames = ["correct_", "correct_diffs_", "time_", "time_diffs_"];
+let unstable = new Map();
+unstable.set("easy_one", [0, 1]);
+unstable.set("easy_two", [2]);
+unstable.set("medium_two", [1]);
 //for (let name of names) {
 names.forEach((printName, name) => {
   let title = document.createElement("h4");
@@ -67,7 +71,8 @@ names.forEach((printName, name) => {
   let columnsTables = document.createElement("div");
   columnsTables.className = "columns";
   for (let fileName of fileNames) {
-    columnsTables.appendChild(createTable("./tables/" + fileName + name));
+    let col = createTable("./tables/" + fileName + name, name, fileName);
+    columnsTables.appendChild(col);
   }
 
   subResultsDiv.appendChild(columnsPlots);
@@ -85,7 +90,7 @@ function createColumnWithImage(path) {
   return column;
 }
 
-function createTable(path) {
+function createTable(path, name, fileName) {
   let column = document.createElement("div");
   column.className = "column";
   let tableElement = document.createElement("table");
@@ -97,8 +102,17 @@ function createTable(path) {
     })
     .then(html => {
       tableElement.innerHTML = html;
+      if (unstable.has(name) && fileName == "correct_") {
+        for (let index of unstable.get(name)) {
+          tableElement.children[1].children[index].children[3].innerHTML =
+            tableElement.children[1].children[index].children[3].innerHTML +
+            "*";
+          tableElement.children[1].children[index].children[4].innerHTML =
+            tableElement.children[1].children[index].children[4].innerHTML +
+            "*";
+        }
+      }
     });
-
   column.appendChild(tableElement);
   return column;
 }
