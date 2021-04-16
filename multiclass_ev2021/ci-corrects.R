@@ -37,8 +37,6 @@ saveTablesAndGraphs <- function(mydata, name) {
   )
   elements <- statstable_time
   
-  ggplot(elements, aes(x=user, y=time)) +
-    geom_point(size=2, shape=23)
   
   elements <- reshape(elements, timevar="technique", idvar=c("user"), direction="wide")
   colnames(elements) <- gsub("time.", "", colnames(elements))
@@ -88,11 +86,7 @@ saveTablesAndGraphs <- function(mydata, name) {
   #
   
   # CIs with adapted alpha value for multiple comparisons not needed here
- 
-  print(data$ML - data$SW)
-  print(data$JX - data$OV)
-  print(data$JX - data$SW)
-  print(data$JX - data$SW)
+
   diffJXML = bootstrapMeanCI_corr(data$JX - data$ML, 1)
   diffJXOV = bootstrapMeanCI_corr(data$JX - data$OV, 1)
   diffJXSW = bootstrapMeanCI_corr(data$JX - data$SW, 1)
