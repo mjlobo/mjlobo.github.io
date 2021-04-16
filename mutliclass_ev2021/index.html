@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Supplemental material</title>
+    <link rel="stylesheet" href="bulma.min.css" />
+    <meta charset="utf-8" />
+    <style type="text/css">
+      hr.solid {
+        border-top: 1px solid #bbb;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="section">
+      <div class="container" id="container_titles">
+        <h1 class="title is-2">
+          Evaluating Interactive Comparison Techniques in a Multiclass Density
+          Map for Visual Crime Analytics
+        </h1>
+        <h1 class="subtitle is-4">
+          Submitted to EuroVis 2021 - Supplemental material
+        </h1>
+        <figure class="image">
+          <img src="teaser1.png" />
+        </figure>
+        <!-- <hr class="solid" /> -->
+      </div>
+    </section>
+    <section class="section">
+      <div class="container" id="container_pilot_div">
+        <h2 class="title is-3">User Study</h2>
+        <div class="block">
+          <p>
+            <a href="http://lukassr.herokuapp.com/">Techniques demos </a>
+          </p>
+          <p>
+            <a href="./data_multiclass.csv" download>Data</a>, R scripts:
+            <a href="ci-corrects.R">error</a> and <a href="ci-time.R">time</a>.
+            These scripts use the script:
+            <a href="CI-Functions-Bonferroni.R">CI Functions Bonferroni</a>.
+          </p>
+        </div>
+        <h2 class="title is-3">Results</h2>
+
+        <h3 class="title is-4">Global results</h3>
+        <div id="global_results"></div>
+        <br /><br /><br />
+        <h3 class="title is-4">Results per tasks and difficulty</h3>
+        <div id="subresults"></div>
+      </div>
+    </section>
+    <!-- <canvas id= "olic_canvas" width="1024" height="1024"></canvas> -->
+    <div id="main" class="grid-container"></div>
+    <script src="index.js"></script>
+  </body>
+</html>
