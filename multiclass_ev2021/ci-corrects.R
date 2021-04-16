@@ -90,7 +90,7 @@ saveTablesAndGraphs <- function(mydata, name) {
   diffJXML = bootstrapMeanCI_corr(data$JX - data$ML, 1)
   diffJXOV = bootstrapMeanCI_corr(data$JX - data$OV, 1)
   diffJXSW = bootstrapMeanCI_corr(data$JX - data$SW, 1)
-  diffMLOV = bootstrapMeanCI_corr(data$JX - data$SW, 1)
+  diffMLOV = bootstrapMeanCI_corr(data$ML - data$OV, 1)
   diffMLSW = bootstrapMeanCI_corr(data$ML - data$SW, 1)
   diffOVSW = bootstrapMeanCI_corr(data$OV - data$SW, 1)
   
