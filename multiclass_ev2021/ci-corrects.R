@@ -54,10 +54,10 @@ saveTablesAndGraphs <- function(mydata, name) {
   
   
   
-  techniqueA <- bootstrapMeanCI(data$JX, 'perc')
-  techniqueB <- bootstrapMeanCI(data$ML, 'perc')
-  techniqueC <- bootstrapMeanCI(data$SW, 'perc')
-  techniqueD <- bootstrapMeanCI(data$OV, 'perc')
+  techniqueA <- bootstrapMeanCI(data$JX)
+  techniqueB <- bootstrapMeanCI(data$ML)
+  techniqueC <- bootstrapMeanCI(data$SW)
+  techniqueD <- bootstrapMeanCI(data$OV)
   
   #
   # Calculating means per condition
